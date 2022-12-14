@@ -1,55 +1,64 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_project/pages/guessScreenPage.dart';
-import 'package:flutter_project/pages/resultPage.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_project/pages/mainPage.dart';
 
-class mainPage extends StatefulWidget {
-  const mainPage({super.key});
+class resultPage extends StatefulWidget {
+  const resultPage({super.key});
 
   @override
-  State<mainPage> createState() => _mainPageState();
+  State<resultPage> createState() => _resultPageState();
 }
 
-class _mainPageState extends State<mainPage> {
+class _resultPageState extends State<resultPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         backgroundColor: Colors.indigo,
-        title: Text("Main Page"),
+        title: Text("Result Page"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
-              "Guess Game",
-              style: TextStyle(fontSize: 40, color: Colors.redAccent),
-            ),
             Icon(
-              Icons.question_mark_outlined,
+              Icons.sentiment_satisfied_alt_outlined,
               size: 100,
+            ),
+
+            Text("Congratulations",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.red,
+              fontSize: 35
+            ),
             ),
             SizedBox(
               width: 150,
               height: 50,
               child: ElevatedButton(
-                child: Text("Start Game"),
+                child: Text("Play Again"),
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => guessScreenPage()));
+                          builder: (context) => mainPage()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.indigo,
                 ),
               ),
             )
+
+
           ],
         ),
+
       ),
+
     );
+      
   }
 }

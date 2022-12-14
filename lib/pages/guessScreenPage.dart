@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_project/pages/resultPage.dart';
 
 class guessScreenPage extends StatefulWidget {
   const guessScreenPage({super.key});
@@ -41,12 +42,10 @@ class _guessScreenState extends State<guessScreenPage> {
               width: 150,
               height: 50,
               child: ElevatedButton(
-                child: Text("Start Game"),
+                child: Text("Guess"),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => guessScreenPage()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => resultPage()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.indigo,
